@@ -1,0 +1,25 @@
+<div class="form py-4">
+  <div class="my-1">
+    <label for="title" class="control-label">Title</label>
+    <input
+      type="text"
+      id="title"
+      class="form-control"
+      placeholder="Enter The Task"
+      [(ngModel)]="title"
+    />
+  </div>
+
+  <div class="my-1">
+    <label for="priority" class="control-label">Priority</label>
+    <select id="priority" class="form-select" [(ngModel)]="priority">
+      <option selected>Select a Priority</option>
+      <option value="urgent">Urgent</option>
+      <option value="daily">Daily</option>
+      <option value="monthly">Monthly</option>
+    </select>
+  </div>
+  <button (click)="SaveData()" class="btn btn-secondary mt-2">
+    Save
+  </button>
+</div>

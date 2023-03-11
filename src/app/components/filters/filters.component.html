@@ -1,0 +1,18 @@
+<div class="form py-4">
+  <div class="my-1">
+    <label for="search" class="control-label">Search Engine</label>
+    <input type="text" id="search" class="form-control"
+      placeholder="Enter Task Title to look for " (input)="captureSearch($event)" />
+  </div>
+
+  <div class="my-1">
+    <label for="priority" class="control-label">Filter by Priority</label>
+    <select id="priority" class="form-select" (change)="filterbyPriority($event)">
+      <option value="" selected>Select a Priority</option>
+      <option value="urgent">Urgent</option>
+      <option value="daily">Daily</option>
+      <option value="monthly">Monthly</option>
+    </select>
+  </div>
+  <button class="btn btn-secondary mt-2">Search</button>
+</div>

@@ -1,0 +1,25 @@
+<hr />
+<section>
+  <article
+    class="p-3 d-flex justify-content-between mb-2 text-white"
+    [ngClass]="{
+      'bg-danger': task.priority === 'urgent',
+      'bg-primary': task.priority === 'daily',
+      'bg-success': task.priority === 'monthly'
+    }"
+    *ngFor="let task of taskAssigned"
+  >
+    <h3>{{ task.title }} - {{ task.priority }}</h3>
+    <button (click)="deleteTask(task.id)" class="btn">
+      <i class="fas fa-trash text-white"></i>
+    </button>
+  </article>
+</section>
+
+<section *ngIf="taskAssigned.length === 0">
+  <article
+    class="bg-secondary p-3 d-flex justify-content-between mb-2 text-white"
+  >
+    There are no tasks to show.
+  </article>
+</section>

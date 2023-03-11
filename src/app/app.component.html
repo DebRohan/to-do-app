@@ -1,0 +1,32 @@
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong>Welcome!</strong> You should check in on some of those fields
+  below.
+  <button
+    type="button"
+    class="btn-close"
+    data-bs-dismiss="alert"
+    aria-label="Close"
+  ></button>
+</div>
+
+<div class="container">
+  <header class="row">
+    <div class="col-6">
+      <app-form (formSubmitted)="onTaskSave($event)"></app-form>
+    </div>
+    <div class="col-6">
+      <app-filters
+        (priorityTask)="onFilterPriority($event)"
+        (searchSubmitted)="onSearch($event)"
+      ></app-filters>
+    </div>
+  </header>
+  <main>
+    <app-list-tasks
+      [tasks]="arrTasks"
+      [priority]="priority"
+      [search]="search"
+      (taskDeleted)="onDeleteTask($event)"
+    ></app-list-tasks>
+  </main>
+</div>
